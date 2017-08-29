@@ -16,6 +16,7 @@
         <module>common-base</module>
         <module>common-base-tiku</module>
         <module>common-utils</module>
+        <module>common-sdk</module>
     </modules>
 
     <dependencies>
