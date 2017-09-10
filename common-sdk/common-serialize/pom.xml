@@ -10,28 +10,23 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.huatu.commons.sdk</groupId>
-    <artifactId>common-spring</artifactId>
+    <artifactId>common-serialize</artifactId>
 
     <dependencies>
         <dependency>
-            <groupId>com.huatu.commons</groupId>
-            <artifactId>common-base</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework</groupId>
-            <artifactId>spring-core</artifactId>
-        </dependency>
-
-
-        <dependency>
-            <groupId>com.huatu.commons.sdk</groupId>
-            <artifactId>common-serialize</artifactId>
-        </dependency>
-        <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-redis</artifactId>
+            <groupId>org.slf4j</groupId>
+            <artifactId>slf4j-api</artifactId>
             <optional>true</optional>
         </dependency>
 
+        <dependency>
+            <groupId>com.esotericsoftware</groupId>
+            <artifactId>kryo</artifactId>
+            <optional>true</optional>
+        </dependency>
+        <dependency>
+            <groupId>de.javakaffee</groupId>
+            <artifactId>kryo-serializers</artifactId>
+        </dependency>
     </dependencies>
 </project>

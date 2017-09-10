@@ -1,9 +1,8 @@
-package com.huatu.common.bean;
+package com.huatu.common.bean.page;
 
-import java.io.Serializable;
 import java.util.List;
 
-public class PageBean<T> implements Serializable {
+public class Pager<T> implements Pageable {
 
     private static final long serialVersionUID = 8337463880134937842L;
 
@@ -40,23 +39,8 @@ public class PageBean<T> implements Serializable {
      */
     private int previousPage;
 
-    /**
-     * alias for data
-     */
-    private List<T> resutls;//结果集
-    /**
-     * alias for firstResult
-     */
-    private int cursor;//游标
-    /**
-     * alias for totalResults
-     */
-    private int total;//总记录数
 
-    public PageBean() {
-    }
-
-    public PageBean(int currentPage, int onePageSize) {
+    public Pager(int currentPage, int onePageSize) {
         if (currentPage > 1)
             this.currentPage = currentPage;
         else
@@ -161,23 +145,12 @@ public class PageBean<T> implements Serializable {
         return data;
     }
 
-    public void setResutls(List<T> resutls) {
-        this.data = resutls;
-    }
-
     public long getCursor() {
         return firstResult;
-    }
-
-    public void setCursor(int cursor) {
-        this.firstResult = cursor;
     }
 
     public int getTotal() {
         return totalResults;
     }
 
-    public void setTotal(int total) {
-        this.totalResults = total;
-    }
 }

@@ -3,9 +3,13 @@ package com.huatu.common.utils.date;
 public class TimeMark {
 	private long start;
 	private long current;
-	public TimeMark(){
+	private TimeMark(){
 		start = System.currentTimeMillis();
 		current = System.currentTimeMillis();
+	}
+
+	public static TimeMark newInstance(){
+		return new TimeMark();
 	}
 	public void mark(){
 		current = System.currentTimeMillis();

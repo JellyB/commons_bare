@@ -170,7 +170,7 @@ public class OrderNoCenter {
 
     public static void main(String[] args){
         //性能测试
-        TimeMark mark = new TimeMark();
+        TimeMark mark = TimeMark.newInstance();
         for (int i = 0; i < 1000000; i++) {
             OrderNoCenter.getInstance().create();
         }
