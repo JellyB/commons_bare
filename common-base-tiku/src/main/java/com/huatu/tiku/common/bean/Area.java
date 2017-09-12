@@ -19,13 +19,19 @@ public class Area {
      * global id
      */
     private int gid;
+    /**
+     * netschool id,mapping query course
+     */
+    private int cid;
+
     private List<Area> children;
 
 
-    public Area(int id, String name, int parentId,int gid) {
+    public Area(int id, String name, int parentId,int gid,int cid) {
         this.id = id;
         this.name = name;
         this.parentId = parentId;
+        this.cid = cid;
         this.children = new ArrayList(10);
     }
 
@@ -53,4 +59,11 @@ public class Area {
         return name;
     }
 
+    public int getGid() {
+        return gid;
+    }
+
+    public int getCid() {
+        return cid;
+    }
 }

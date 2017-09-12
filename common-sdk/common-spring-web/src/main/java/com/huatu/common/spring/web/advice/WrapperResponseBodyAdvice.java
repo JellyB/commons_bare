@@ -23,7 +23,7 @@ import org.springframework.web.servlet.mvc.method.annotation.ResponseBodyAdvice;
 
 @Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
-@ConditionalOnProperty(value = "huatu.wrapper",havingValue = "enabled")
+@ConditionalOnProperty(value = "htonline.wrapper.enabled",havingValue = "true")
 public class WrapperResponseBodyAdvice implements ResponseBodyAdvice {
 
     @Override

@@ -2,12 +2,10 @@ package com.huatu.tiku.common.bean;
 
 import com.google.common.collect.ImmutableList;
 import com.google.common.collect.ImmutableMap;
+import com.google.common.collect.Maps;
 
 import java.io.*;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.Map;
-import java.util.Optional;
+import java.util.*;
 
 /**
  * 区域常量
@@ -38,13 +36,17 @@ public class AreaConstants {
             final BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(input, "UTF-8"));
             //
             ImmutableMap.Builder<Integer,Area> areasBuilder = ImmutableMap.builder();
+
+            Map<Integer,Integer> areaMapping = getNetschoolMapping();
+
             bufferedReader.lines().forEach(line ->{
                 final String[] split = line.split(",");
                 int id = Integer.valueOf(split[0]);
                 String name = split[1];
                 int parent = Integer.valueOf(split[2]);
                 int gid = Integer.valueOf(split[3]);
-                Area area = new Area(id,name,parent,gid);
+                int cid = Optional.ofNullable(areaMapping.get(id)).orElse(0);
+                Area area = new Area(id,name,parent,gid,cid);
                 areasBuilder.put(area.getId(),area);
             });
             // 所有地区集合
@@ -89,6 +91,47 @@ public class AreaConstants {
         }
     }
     //endregion
+
+
+    /**
+     * 课程相关，省份映射
+     * @return
+     */
+    private static Map<Integer,Integer> getNetschoolMapping(){
+        Map<Integer,Integer> mapping = Maps.newHashMap();
+        InputStream input = AreaConstants.class.getClassLoader().getResourceAsStream("area.mapping");
+        Properties properties = new Properties();
+        try {
+            properties.load(input);
+            properties.forEach((k,v) -> {
+               mapping.put(Integer.parseInt(String.valueOf(k)),Integer.parseInt(String.valueOf(v)));
+            });
+        } catch (IOException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                input.close();
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        properties = null;
+        return mapping;
+    }
+
+    /**
+     * 根据areaId获取课程使用的provinceId
+     * @param areaId
+     * @return
+     */
+    public static int getNetSchoolProvinceId(int areaId){
+        Area area = getArea(areaId);
+        if(area.getCid() == 0){
+            area = getArea(area.getParentId());
+        }
+        return Optional.ofNullable(area).map( (a) -> a.getCid()).orElse(0);
+    }
+
 
     /**
      * 根据区域查询区域
