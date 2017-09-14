@@ -22,6 +22,11 @@ public class CatgoryType {
     public static final int SHI_YE_DAN_WEI = 3;
 
     /**
+     * 金融
+     */
+    public static final int JIN_RONG = 8;
+
+    /**
      * 医疗
      */
     public static final int YI_LIAO = 9;

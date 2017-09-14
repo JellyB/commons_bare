@@ -9,7 +9,15 @@ import org.springframework.data.redis.serializer.SerializationException;
  * @date 2017/9/6 18:39
  */
 public class KryoRedisSerializer<T> implements RedisSerializer {
-    private KryoSerializer kryoSerializer = new KryoSerializer();
+    private KryoSerializer kryoSerializer;
+
+    public KryoRedisSerializer(){
+        this(new KryoSerializer());
+    }
+    public KryoRedisSerializer(KryoSerializer kryoSerializer){
+        this.kryoSerializer = kryoSerializer;
+    }
+
     @Override
     public byte[] serialize(Object o) throws SerializationException {
         return kryoSerializer.serialize(o);

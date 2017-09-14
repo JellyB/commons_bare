@@ -11,8 +11,12 @@ public class HashMapBuilder<K,V> {
 
     private HashMap<K,V> map;
 
-    public HashMapBuilder(){
+    private HashMapBuilder(){
         this.map = new HashMap<K,V>();
+    }
+
+    public static <K,V>HashMapBuilder<K,V> newBuilder(){
+        return new HashMapBuilder<K,V>();
     }
 
     public HashMapBuilder(Map<? extends K, ? extends V> m){
