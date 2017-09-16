@@ -39,4 +39,9 @@ public class HashMapBuilder<K,V> {
     public HashMap<K,V> build(){
         return this.map;
     }
+
+    //擦除类型
+    public <NK,NV> HashMap<NK,NV> buildUnsafe(){
+        return (HashMap<NK, NV>) this.map;
+    }
 }
