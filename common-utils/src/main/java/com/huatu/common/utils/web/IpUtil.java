@@ -1,5 +1,6 @@
 package com.huatu.common.utils.web;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -63,15 +64,6 @@ public class IpUtil {
      * @return String
      */
     public static String getLocalIP() {
-
-        // 如果是Windows操作系统
-        /*
-		 * if (isWindowsOS()) {
-		 * ip = InetAddress.getLocalHost();
-		 * innerIpList.add(ip);
-		 * }
-		 */
-        //
         List<String> ips = getLocalIPs();
         if (ips.size() > 0) {
             return ips.get(ips.size() - 1);
@@ -79,6 +71,24 @@ public class IpUtil {
             return "";
         }
     }
+
+    public static String getLocalIP(String[] preferedNetworks){
+        if(ArrayUtils.isEmpty(preferedNetworks)){
+            return getLocalIP();
+        }
+        List<String> ips = getLocalIPs();
+        if(ips.size() > 0){
+            for (String ip : ips) {
+                for (String preferedNetwork : preferedNetworks) {
+                    if(preferedNetwork == null || ip.matches(preferedNetwork) || ip.startsWith(preferedNetwork)){
+                        return ip;
+                    }
+                }
+            }
+        }
+        return "";
+    }
+
 
     public static Long getIpFlag(int flag) {
         String ip = IpUtil.getLocalIP();
