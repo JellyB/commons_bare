@@ -17,6 +17,7 @@
         <module>common-base-tiku</module>
         <module>common-utils</module>
         <module>common-sdk</module>
+        <module>common-test</module>
     </modules>
 
 </project>
