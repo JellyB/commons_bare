@@ -7,7 +7,7 @@ import com.huatu.common.ErrorResult;
  * Created by shaojieyue
  * Created time 2016-04-24 14:07
  */
-public class BizException extends Exception {
+public class BizException extends RuntimeException {
     private ErrorResult errorResult;
     private String customMessage;//个性化信息
 

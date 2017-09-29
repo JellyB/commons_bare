@@ -1,5 +1,6 @@
 package com.huatu.common.utils.reflect;
 
+import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 
@@ -68,7 +69,10 @@ public class ClassUtils {
             _logger.error("not a bean");
             return map;
         }
-        Field[] fields = declared ? clazz.getDeclaredFields() : clazz.getFields();
+        Field[] fields = clazz.getDeclaredFields();
+        if(!declared){
+            ArrayUtils.addAll(fields,clazz.getFields());
+        }
         for (Field field : fields) {
             Class fieldClass = field.getType();
             if (fieldClass.isPrimitive() || CharSequence.class.isAssignableFrom(fieldClass) || Number.class.isAssignableFrom(fieldClass)) {
@@ -113,4 +117,9 @@ public class ClassUtils {
      ABSTRACT: 1024
      STRICT: 2048
      */
+
+
+    public static void main(String[] args){
+
+    }
 }
