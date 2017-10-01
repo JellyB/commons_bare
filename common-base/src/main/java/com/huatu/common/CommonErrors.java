@@ -11,7 +11,7 @@ public class CommonErrors {
     public static final  ErrorResult SERVICE_INTERNAL_ERROR = createImmutableResult(1000102,"服务内部错误");
     public static final  ErrorResult RESOURCE_NOT_FOUND = createImmutableResult(1000103,"资源未发现");
     public static final  ErrorResult PERMISSION_DENIED = createImmutableResult(1000104,"权限拒绝");
-    public static final  ErrorResult FORBIDDEN = createImmutableResult(1000104,"非法请求");
+    public static final  ErrorResult FORBIDDEN = createImmutableResult(1000105,"非法请求");
 
     /**
      * 用户会话过期
