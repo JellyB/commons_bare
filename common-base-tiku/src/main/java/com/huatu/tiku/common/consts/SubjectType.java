@@ -4,8 +4,8 @@ package com.huatu.tiku.common.consts;
  * 考试科目列表
  * 这个主要是针对知识点的分类
  * Created by shaojieyue
- * Created time 2016-05-24 10:47
- */
+         * Created time 2016-05-24 10:47
+         */
 public class SubjectType {
     /**
      * 公务员-行测

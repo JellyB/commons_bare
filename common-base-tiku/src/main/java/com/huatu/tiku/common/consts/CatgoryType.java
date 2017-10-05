@@ -29,5 +29,10 @@ public class CatgoryType {
     /**
      * 医疗
      */
-    public static final int YI_LIAO = 9;
+    public static final int YI_LIAO = 200100000;
+
+    /**
+     * 公检法
+     */
+    public static final int GONG_JIAN_FA = 26;
 }
