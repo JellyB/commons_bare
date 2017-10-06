@@ -5,6 +5,7 @@ package com.huatu.tiku.common.consts;
  * Created by shaojieyue
  * Created time 2016-12-13 11:08
  */
+@Deprecated
 public class CatgoryType {
     /**
      * 公考
@@ -31,8 +32,4 @@ public class CatgoryType {
      */
     public static final int YI_LIAO = 200100000;
 
-    /**
-     * 公检法
-     */
-    public static final int GONG_JIAN_FA = 26;
 }

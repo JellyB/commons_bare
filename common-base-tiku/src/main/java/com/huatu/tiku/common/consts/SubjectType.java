@@ -6,6 +6,7 @@ package com.huatu.tiku.common.consts;
  * Created by shaojieyue
          * Created time 2016-05-24 10:47
          */
+@Deprecated
 public class SubjectType {
     /**
      * 公务员-行测

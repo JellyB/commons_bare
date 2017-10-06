@@ -23,9 +23,19 @@ public class ErrorResult implements Result {
         return new ErrorResult(code,message);
     }
 
+    public static final ErrorResult create(int code,String message,Object data){
+        return new ErrorResult(code,message,data);
+    }
+
     protected ErrorResult(int code, String message) {
         this.message = message;
         this.code = code;
+    }
+
+    public ErrorResult(int code,String message,  Object data) {
+        this.message = message;
+        this.code = code;
+        this.data = data;
     }
 
     public Object getData() {
