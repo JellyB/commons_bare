@@ -7,6 +7,7 @@ import java.beans.PropertyDescriptor;
 import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.HashMap;
+import java.util.Map;
 
 /**
  * 自省代替反射
@@ -58,7 +59,7 @@ public class BeanUtil {
      * @param map
      * @return
      */
-    public static <T> T fromMap(Class<T> clazz,HashMap map){
+    public static <T> T fromMap(Class<T> clazz,Map<String,Object> map){
         Object object = null;
         try {
             object = clazz.newInstance();
