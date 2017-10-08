@@ -1,4 +1,4 @@
-package com.huatu.common.utils.web;
+package com.huatu.common.utils.env;
 
 import org.apache.commons.lang3.ArrayUtils;
 import org.slf4j.Logger;
@@ -10,8 +10,8 @@ import java.util.ArrayList;
 import java.util.Enumeration;
 import java.util.List;
 
-public class IpUtil {
-    private static final Logger log = LoggerFactory.getLogger(IpUtil.class);
+public class IpAddrUtil {
+    private static final Logger log = LoggerFactory.getLogger(IpAddrUtil.class);
 
     /**
      * 判断当前操作是否Windows.
@@ -91,7 +91,7 @@ public class IpUtil {
 
 
     public static Long getIpFlag(int flag) {
-        String ip = IpUtil.getLocalIP();
+        String ip = IpAddrUtil.getLocalIP();
         log.info("ip=" + ip);
         String ips[] = ip.split("[.]");
         return Long.valueOf(ips[flag - 1]);

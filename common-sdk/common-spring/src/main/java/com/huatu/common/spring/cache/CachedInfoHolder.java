@@ -53,7 +53,7 @@ public class CachedInfoHolder {
     @Data
     @Builder
     public static class CachedInfo {
-        private int _id;
+        private int id;
         private String name;
         private String key;
         private int cluster;
@@ -78,7 +78,7 @@ public class CachedInfoHolder {
             return null;
         }
         CachedInfo cachedInfo = CachedInfo.builder()
-                ._id(id)
+                .id(id)
                 .name(cached.name())
                 .key(cached.key())
                 .cluster(cached.cluster())

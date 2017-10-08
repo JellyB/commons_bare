@@ -17,7 +17,7 @@ import java.util.Map;
 public class ClassUtils {
     public static final int STATIC_MODIFIER = 0x08;
     public static final int PUBLIC_MODIFIER = 0x01;
-    private static final Logger _logger = LoggerFactory.getLogger(ClassUtils.class);
+    private static final Logger logger = LoggerFactory.getLogger(ClassUtils.class);
 
     public static String getClassByteName(Class clazz) {
         String name = clazz.getCanonicalName();
@@ -84,7 +84,7 @@ public class ClassUtils {
         Map<String, Object> map = new HashMap<String, Object>();
         Class<?> clazz = object.getClass();
         if (clazz.isPrimitive() || clazz.isArray() || clazz.isEnum() || Collection.class.isAssignableFrom(clazz) || CharSequence.class.isAssignableFrom(clazz) || Number.class.isAssignableFrom(clazz)) {
-            _logger.error("not a bean");
+            logger.error("not a bean");
             return map;
         }
         Field[] fields = clazz.getDeclaredFields();
@@ -113,7 +113,7 @@ public class ClassUtils {
                     Object value = method.invoke(object);
                     map.put(name, value);
                 } catch (Exception e) {
-                    _logger.error("cant find get method for {}.{}", clazz, name);
+                    logger.error("cant find get method for {}.{}", clazz, name);
                 }
             }
         }
