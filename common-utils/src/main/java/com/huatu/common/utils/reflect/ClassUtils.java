@@ -53,15 +53,33 @@ public class ClassUtils {
      * @param object
      * @return
      */
+    @Deprecated
     public static Map<String, Object> getBeanProperties(Object object) {
         return getBeanProperties(object,false,false);
     }
+
+    //修饰符表
+    /**
+     PUBLIC: 1
+     PRIVATE: 2
+     PROTECTED: 4
+     STATIC: 8
+     FINAL: 16
+     SYNCHRONIZED: 32
+     VOLATILE: 64
+     TRANSIENT: 128
+     NATIVE: 256
+     INTERFACE: 512
+     ABSTRACT: 1024
+     STRICT: 2048
+     */
 
     /**
      * @param object
      * @param staticModifier 是否获取被static修饰的
      * @return
      */
+    @Deprecated
     public static Map<String, Object> getBeanProperties(Object object,boolean declared, boolean staticModifier) {
         Map<String, Object> map = new HashMap<String, Object>();
         Class<?> clazz = object.getClass();
@@ -102,24 +120,6 @@ public class ClassUtils {
         return map;
     }
 
-    //修饰符表
-    /**
-     PUBLIC: 1
-     PRIVATE: 2
-     PROTECTED: 4
-     STATIC: 8
-     FINAL: 16
-     SYNCHRONIZED: 32
-     VOLATILE: 64
-     TRANSIENT: 128
-     NATIVE: 256
-     INTERFACE: 512
-     ABSTRACT: 1024
-     STRICT: 2048
-     */
 
 
-    public static void main(String[] args){
-
-    }
 }

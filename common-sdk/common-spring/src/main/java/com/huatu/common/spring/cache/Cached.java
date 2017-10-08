@@ -17,18 +17,48 @@ public @interface Cached {
      * 缓存的业务名称，如“课程列表”
      * @return
      */
-    String value();
-
-    CacheType type() default CacheType.REDIS;
-
-    int cluster() default 1;//所使用的集群，目前只有1个
+    String name();
 
     String key();//spel表达式，
 
-    enum CacheType{
+    Type type() default Type.VALUE;
+
+    /**
+     * 参数
+     * @return
+     */
+    Param[] params() default {};
+
+    DataScourseType sourceType() default DataScourseType.REDIS;
+
+    int cluster() default 1;//所使用的集群，目前只有1个
+
+    enum DataScourseType{
         REDIS,
         MEMCACHE,
         SSDB,
-        LOCAL
+        GETINSIDE, // 对于本地缓存来说，只需要获取缓存和删除缓存
+        DELINSIDE
     }
+
+    enum Type{
+        VALUE,
+        HASH,
+        LIST,
+        SET,
+        ZSET
+    }
+
+    @interface Param{
+        /**
+         * 键的业务名称，如课程id
+         * @return
+         */
+        String name();
+
+        String value(); //参数名
+
+        Class<?> type() default String.class;
+    }
+
 }

@@ -49,7 +49,7 @@ public class RecursionUtils {
     }
 
     /**
-     * 以对象为出口
+     * 以对象为出口,为null则退出
      * @param <T>
      */
     public interface ObjectFunc<T>{
