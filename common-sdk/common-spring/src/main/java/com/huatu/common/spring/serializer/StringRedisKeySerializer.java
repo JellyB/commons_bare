@@ -41,5 +41,7 @@ public class StringRedisKeySerializer extends StringRedisSerializer {
         return string == null ? null : super.serialize(prefix+string);
     }
 
-
+    public String getPrefix() {
+        return prefix;
+    }
 }
