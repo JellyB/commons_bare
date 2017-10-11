@@ -53,7 +53,6 @@ public class ClassUtils {
      * @param object
      * @return
      */
-    @Deprecated
     public static Map<String, Object> getBeanProperties(Object object) {
         return getBeanProperties(object,false,false);
     }
@@ -79,7 +78,6 @@ public class ClassUtils {
      * @param staticModifier 是否获取被static修饰的
      * @return
      */
-    @Deprecated
     public static Map<String, Object> getBeanProperties(Object object,boolean declared, boolean staticModifier) {
         Map<String, Object> map = new HashMap<String, Object>();
         Class<?> clazz = object.getClass();

@@ -15,6 +15,12 @@ import java.util.Map;
  * @date 2017/10/7 14:18
  */
 public class BeanUtil {
+    /**
+     * 注意java自省规则，前两个字母大小写判断的问题
+     * @param bean
+     * @return
+     */
+    @Deprecated
     public static HashMap<String, Object> toMap(Object bean) {
         HashMap<String, Object> map = new HashMap<String, Object>();
         if (null == bean) {
