@@ -1,8 +1,12 @@
 package com.huatu.common.serialize;
 
+
 /**
  * @author hanchao
  * @date 2017/10/12 14:04
  */
-public class Serializer {
+public interface Serializer {
+    byte[] serialize(Object obj);
+
+    Object deserialize(byte[] bytes);
 }

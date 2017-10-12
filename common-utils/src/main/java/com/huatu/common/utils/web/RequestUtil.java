@@ -13,7 +13,6 @@ import java.net.URLEncoder;
 import java.nio.charset.Charset;
 import java.util.Iterator;
 import java.util.Map;
-import java.util.TreeMap;
 
 /**
  * @author hanchao
@@ -72,9 +71,7 @@ public class RequestUtil {
      * @return
      */
     public static String getParamSign(Map<String,Object> params){
-        TreeMap treeMap = Maps.newTreeMap();
-        treeMap.putAll(params);
-        return SignUtil.getPaySign(treeMap,null);
+        return SignUtil.getPaySign(params,null);
     }
 
     /**

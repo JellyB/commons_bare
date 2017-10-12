@@ -5,6 +5,7 @@ import com.esotericsoftware.kryo.KryoException;
 import com.esotericsoftware.kryo.io.Input;
 import com.esotericsoftware.kryo.io.Output;
 import com.huatu.common.serialize.Serializations;
+import com.huatu.common.serialize.Serializer;
 import lombok.extern.slf4j.Slf4j;
 
 import java.io.ByteArrayOutputStream;
@@ -14,7 +15,7 @@ import java.io.ByteArrayOutputStream;
  * @date 2017/9/6 18:27
  */
 @Slf4j
-public class KryoSerializer {
+public class KryoSerializer implements Serializer {
 
     private KryoFactory kryoFactory;
     private boolean throwOnDeserializeError; // 默认false,不抛出序列化失败的异常
