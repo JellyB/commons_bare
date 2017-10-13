@@ -108,7 +108,12 @@ public class DateUtil {
             if(Calendar.HOUR_OF_DAY < unit) break;
             calendar.set(Calendar.HOUR_OF_DAY,0);
             if(Calendar.DAY_OF_WEEK < unit) break;
-            calendar.set(Calendar.DAY_OF_WEEK,Calendar.MONDAY);
+            if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY){
+                calendar.add(Calendar.DAY_OF_MONTH,-7);
+                calendar.set(Calendar.DAY_OF_WEEK,Calendar.MONDAY);
+            }else{
+                calendar.set(Calendar.DAY_OF_WEEK,Calendar.MONDAY);
+            }
             if(calendar.DAY_OF_MONTH < unit) break;
             calendar.set(Calendar.DAY_OF_MONTH,1);
             if(calendar.MONTH < unit) break;
@@ -139,11 +144,16 @@ public class DateUtil {
             if(Calendar.HOUR_OF_DAY < unit) break;
             calendar.set(Calendar.HOUR_OF_DAY,23);
             if(Calendar.DAY_OF_WEEK < unit) break;
-            calendar.set(Calendar.DAY_OF_WEEK,Calendar.SUNDAY);
+            if(calendar.get(Calendar.DAY_OF_WEEK) == Calendar.SUNDAY){
+                calendar.set(Calendar.DAY_OF_WEEK,Calendar.SUNDAY);
+            }else{
+                calendar.add(Calendar.DAY_OF_MONTH,7);
+                calendar.set(Calendar.DAY_OF_WEEK,Calendar.SUNDAY);
+            }
             if(calendar.DAY_OF_MONTH < unit) break;
             calendar.set(Calendar.DAY_OF_MONTH,0);
             if(calendar.MONTH < unit) break;
-            calendar.set(calendar.MONTH,Calendar.DECEMBER);
+            calendar.set(calendar.MONTH,Calendar.UNDECIMBER);
         } while(false);
         return calendar;
     }

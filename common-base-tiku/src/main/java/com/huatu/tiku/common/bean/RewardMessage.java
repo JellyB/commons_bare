@@ -1,5 +1,6 @@
 package com.huatu.tiku.common.bean;
 
+import lombok.Builder;
 import lombok.Data;
 
 import java.io.Serializable;
@@ -9,6 +10,7 @@ import java.io.Serializable;
  * @date 2017/10/12 20:15
  */
 @Data
+@Builder
 public class RewardMessage implements Serializable {
     private static final long serialVersionUID = 1L;
 
@@ -18,5 +20,5 @@ public class RewardMessage implements Serializable {
     private int experience; //经验,大于0则优先使用
     private int uid;
     private String uname;
-    private int timestamp;
+    private long timestamp;
 }
