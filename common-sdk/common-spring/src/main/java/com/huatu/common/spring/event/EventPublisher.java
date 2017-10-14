@@ -54,12 +54,11 @@ public class EventPublisher implements ApplicationContextAware {
     }
 
     /**
-     * 事件必须是标准单个ctx参数的构造函数
      * @param clazz
      */
     public <T extends ApplicationEvent> boolean publishEvent(Class<T> clazz,Object source,EventInitializer<T> initializer){
         ApplicationEvent event = buildEvent(clazz,source);
-        if(event != null){
+        if(event == null){
             return false;
         }
         if(initializer != null){
@@ -81,7 +80,7 @@ public class EventPublisher implements ApplicationContextAware {
         executor.execute( () -> publishEvent(clazz,source,initializer));
     }
 
-    interface EventInitializer<T extends ApplicationEvent> {
+    public interface EventInitializer<T extends ApplicationEvent> {
         void initializeEvent(T event);
     }
 }

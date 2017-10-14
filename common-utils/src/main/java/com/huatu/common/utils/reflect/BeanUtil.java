@@ -20,7 +20,6 @@ public class BeanUtil {
      * @param bean
      * @return
      */
-    @Deprecated
     public static HashMap<String, Object> toMap(Object bean) {
         HashMap<String, Object> map = new HashMap<String, Object>();
         if (null == bean) {

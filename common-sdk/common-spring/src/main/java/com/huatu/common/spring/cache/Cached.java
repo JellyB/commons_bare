@@ -61,4 +61,12 @@ public @interface Cached {
         Class<?> type() default String.class;
     }
 
+    boolean watchable() default true;
+
+    /**
+     * 如果不允许外部系统进行更改，设置为false
+     * @return
+     */
+    boolean modifiable() default true;
+
 }

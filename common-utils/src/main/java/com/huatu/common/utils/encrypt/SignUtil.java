@@ -23,8 +23,13 @@ public class SignUtil {
      */
     public static String getPaySign(Map<String,Object> params,String key){
         Preconditions.checkNotNull(params);
-        TreeMap<String,Object> treeMap = Maps.newTreeMap();
-        treeMap.putAll(params);
+        TreeMap<String,Object> treeMap = null;
+        if(params instanceof TreeMap){
+            treeMap = (TreeMap<String, Object>) params;
+        }else{
+            treeMap = Maps.newTreeMap();
+            treeMap.putAll(params);
+        }
         StringBuilder str = new StringBuilder();
         for(Iterator<Map.Entry<String,Object>> it = treeMap.entrySet().iterator();it.hasNext();){
             Map.Entry<String,Object> entry = it.next();
