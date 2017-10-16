@@ -1,4 +1,4 @@
-package com.huatu.tiku.common.bean;
+package com.huatu.tiku.common.bean.reward;
 
 import lombok.Builder;
 import lombok.Data;
