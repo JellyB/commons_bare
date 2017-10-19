@@ -5,7 +5,7 @@ import java.util.List;
 public class Pager<T> implements Pageable {
 
     private static final long serialVersionUID = 8337463880134937842L;
-
+    private static final int DEFAULT_PAGESIZE = 10;
     /**
      * 当前页数据
      */
@@ -39,6 +39,9 @@ public class Pager<T> implements Pageable {
      */
     private int previousPage;
 
+    public Pager() {
+        this(1,DEFAULT_PAGESIZE);
+    }
 
     public Pager(int currentPage, int onePageSize) {
         if (currentPage > 1)
