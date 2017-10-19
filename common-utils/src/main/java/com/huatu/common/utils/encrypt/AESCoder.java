@@ -1,9 +1,15 @@
 package com.huatu.common.utils.encrypt;
 
+import com.huatu.common.utils.encode.CharsetConsts;
+import org.apache.commons.codec.binary.Hex;
+import sun.misc.BASE64Decoder;
 import sun.misc.BASE64Encoder;
 
 import javax.crypto.Cipher;
-import java.security.Key;
+import javax.crypto.KeyGenerator;
+import javax.crypto.SecretKey;
+import javax.crypto.spec.SecretKeySpec;
+import java.security.SecureRandom;
 
 /**
  * java加密技术-by梁栋
@@ -12,49 +18,84 @@ import java.security.Key;
  * @date 2017/10/17 21:58
  */
 public class AESCoder {
-    private static final String ALGORITHM = "AES";
+    private static final String KEY_ALGORITHM = "AES";
+    private static final String DEFAULT_CIPHER_ALGORITHM = "AES/ECB/PKCS5Padding";//默认的加密算法
 
-
-    /**
-     * 解密
-     *
-     * @param data
-     * @param key
-     * @return
-     * @throws Exception
-     */
-    public static byte[] decrypt(byte[] data, String key) throws Exception {
-        Key k = SecretKeyCoder.initKey(ALGORITHM,key);
-
-        Cipher cipher = Cipher.getInstance(ALGORITHM);
-        cipher.init(Cipher.DECRYPT_MODE, k);
-
-        return cipher.doFinal(data);
+    public static byte[] encrypt(byte [] content,byte [] key) throws Exception{
+        KeyGenerator kgen = KeyGenerator.getInstance(KEY_ALGORITHM);
+        kgen.init(128, new SecureRandom(key));
+        SecretKey secretKey = kgen.generateKey();
+        byte[] enCodeFormat = secretKey.getEncoded();
+        SecretKeySpec secretKeySpec = new SecretKeySpec(enCodeFormat, KEY_ALGORITHM);
+        Cipher cipher = Cipher.getInstance(DEFAULT_CIPHER_ALGORITHM);
+        cipher.init(Cipher.ENCRYPT_MODE, secretKeySpec);
+        return cipher.doFinal(content);
     }
 
-    /**
-     * 加密
-     *
-     * @param data
-     * @param key
-     * @return
-     * @throws Exception
-     */
-    public static byte[] encrypt(byte[] data, String key) throws Exception {
-        Key k = SecretKeyCoder.initKey(ALGORITHM,key);
-        Cipher cipher = Cipher.getInstance(ALGORITHM);
-        cipher.init(Cipher.ENCRYPT_MODE, k);
-
-        return cipher.doFinal(data);
+    public static byte[] decrypt(byte [] content,byte [] key) throws Exception{
+        KeyGenerator kgen = KeyGenerator.getInstance(KEY_ALGORITHM);
+        kgen.init(128, new SecureRandom(key));
+        SecretKey secretKey = kgen.generateKey();
+        byte[] enCodeFormat = secretKey.getEncoded();
+        SecretKeySpec secretKeySpec = new SecretKeySpec(enCodeFormat, KEY_ALGORITHM);
+        Cipher cipher = Cipher.getInstance(DEFAULT_CIPHER_ALGORITHM);
+        cipher.init(Cipher.DECRYPT_MODE, secretKeySpec);
+        return cipher.doFinal(content);
     }
 
-    public static String decryptWithBase64(String data,String key) throws Exception {
-        return new BASE64Encoder().encode(decrypt(data.getBytes(),key));
+    public static String encryptWithHex(String content,String key){
+        if(key == null){
+            key = "";
+        }
+        try {
+            byte[] encrypt = encrypt(content.getBytes(CharsetConsts.DEFAULT_CHARSET), key.getBytes(CharsetConsts.DEFAULT_CHARSET));
+            return Hex.encodeHexString(encrypt);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
 
-    public static String encryptWithBase64(String data,String key) throws Exception {
-        return new BASE64Encoder().encode(encrypt(data.getBytes(),key));
+    public static String decryptWithHex(String content,String key){
+        if(key == null){
+            key = "";
+        }
+        try {
+            byte[] decrypt = decrypt(Hex.decodeHex(content.toCharArray()), key.getBytes(CharsetConsts.DEFAULT_CHARSET));
+            return new String(decrypt);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
     }
+
+
+    public static String encryptWithB64(String content,String key){
+        if(key == null){
+            key = "";
+        }
+        try {
+            byte[] encrypt = encrypt(content.getBytes(CharsetConsts.DEFAULT_CHARSET), key.getBytes(CharsetConsts.DEFAULT_CHARSET));
+            return new BASE64Encoder().encode(encrypt);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
+    public static String decryptWithB64(String content,String key){
+        if(key == null){
+            key = "";
+        }
+        try {
+            byte[] decrypt = decrypt(new BASE64Decoder().decodeBuffer(content), key.getBytes(CharsetConsts.DEFAULT_CHARSET));
+            return new String(decrypt,CharsetConsts.DEFAULT_CHARSET);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return null;
+        }
+    }
+
 
 }
 

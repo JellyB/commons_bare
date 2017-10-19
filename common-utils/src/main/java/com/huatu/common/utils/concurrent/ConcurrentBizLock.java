@@ -1,5 +1,7 @@
 package com.huatu.common.utils.concurrent;
 
+import com.huatu.common.utils.function.Task;
+
 import java.util.concurrent.ConcurrentHashMap;
 
 /**
@@ -19,6 +21,27 @@ public class ConcurrentBizLock {
     public static boolean releaseLock(Object key){
         Object result = locks.remove(key);
         return result == null ? true : false;
+    }
+
+    public static boolean atomicTask(Object key, Recheck recheck, Task task){
+        if(tryLock(key)){
+            try {
+                if(recheck != null && recheck.check()){
+                    task.execute();
+                    return true;
+                }
+            } catch(Exception e){
+                e.printStackTrace();
+            } finally {
+                releaseLock(key);
+            }
+        }
+        return false;
+    }
+
+
+    public interface Recheck{
+        boolean check() throws InterruptedException;
     }
 
 }
