@@ -23,7 +23,9 @@ public class AESCoder {
 
     public static byte[] encrypt(byte [] content,byte [] key) throws Exception{
         KeyGenerator kgen = KeyGenerator.getInstance(KEY_ALGORITHM);
-        kgen.init(128, new SecureRandom(key));
+        SecureRandom secureRandom = SecureRandom.getInstance("SHA1PRNG");
+        secureRandom.setSeed(key);
+        kgen.init(128, secureRandom);
         SecretKey secretKey = kgen.generateKey();
         byte[] enCodeFormat = secretKey.getEncoded();
         SecretKeySpec secretKeySpec = new SecretKeySpec(enCodeFormat, KEY_ALGORITHM);
@@ -34,7 +36,9 @@ public class AESCoder {
 
     public static byte[] decrypt(byte [] content,byte [] key) throws Exception{
         KeyGenerator kgen = KeyGenerator.getInstance(KEY_ALGORITHM);
-        kgen.init(128, new SecureRandom(key));
+        SecureRandom secureRandom = SecureRandom.getInstance("SHA1PRNG");
+        secureRandom.setSeed(key);
+        kgen.init(128, secureRandom);
         SecretKey secretKey = kgen.generateKey();
         byte[] enCodeFormat = secretKey.getEncoded();
         SecretKeySpec secretKeySpec = new SecretKeySpec(enCodeFormat, KEY_ALGORITHM);
