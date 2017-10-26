@@ -6,10 +6,15 @@ package com.huatu.common;
  * Created time 2016-06-06 15:49
  */
 public class SuccessMessage implements Result {
+    private static final String DEFAULT_MESSAGE = "操作成功";
     private String message;
 
     SuccessMessage(String message) {
         this.message = message;
+    }
+
+    public static final SuccessMessage create(){
+        return create(DEFAULT_MESSAGE);
     }
 
     /**
