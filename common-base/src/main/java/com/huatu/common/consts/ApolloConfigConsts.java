@@ -11,6 +11,8 @@ public class ApolloConfigConsts {
 
     public static final String NAMESPACE_HT_METRICS = "htonline.metrics";
 
+    public static final String NAMESPACE_HT_REDIS_QUEUE = "htonline.redis-queue";
+
     public static final String NAMESPACE_TIKU_RABBIT = "tiku.rabbitmq";
 
     public static final String NAMESPACE_TIKU_REDIS = "tiku.redis-cluster";

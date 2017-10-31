@@ -5,9 +5,13 @@ package com.huatu.tiku.common.consts;
  * @date 2017/10/31 10:16
  */
 public class RabbitConsts {
-    public static final String DLX = "dead_letter_exchange";
-    public static final String DLQ = "dead_letter_queue_default";
-    public static final String DLK = "dead_letter_route_default";
+    public static final String ARG_DLX = "x-dead-letter-exchange";
+    public static final String ARG_DLK = "x-dead-letter-routing-key";
+
+
+    public static final String DLX_DEFAULT = "dead_letter_exchange";
+    public static final String DLQ_DEFAULT = "dead_letter_queue_default";
+    public static final String DLK_DEFAULT = "dead_letter_route_default";
 
 
     /**

@@ -31,17 +31,19 @@ public class PooledKryoFactory extends KryoFactory {
             if(clear.compareAndSet(false,true)){
                 log.info(">>> kryo pool is larger than maxTotal,start clean...");
                 try {
-                    new Thread(() -> {
+                    Thread thread = new Thread(() -> {
                         try {
                             while (pool.size() > maxIdle) {
                                 pool.poll();
                             }
-                        } catch(Exception e){
+                        } catch (Exception e) {
                             e.printStackTrace();
-                        }finally {
+                        } finally {
                             clear.set(false);
                         }
-                    }).start();
+                    });
+                    thread.setDaemon(true);
+                    thread.start();
                 } catch(Exception e){
                     e.printStackTrace();
                 }
