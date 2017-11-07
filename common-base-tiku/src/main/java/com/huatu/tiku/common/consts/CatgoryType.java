@@ -2,6 +2,7 @@ package com.huatu.tiku.common.consts;
 
 /**
  * 考试类目
+ * moved to SubjectEnum
  * Created by shaojieyue
  * Created time 2016-12-13 11:08
  */
