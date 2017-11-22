@@ -21,7 +21,7 @@ public class Pager<T> implements Pageable {
     /**
      * 总记录数
      */
-    private int totalResults;
+    private long totalResults;
     /**
      * 每页条数
      */
@@ -74,7 +74,7 @@ public class Pager<T> implements Pageable {
         this.onePageSize = onePageSize;
     }
 
-    public int getTotalResults() {
+    public long getTotalResults() {
         return totalResults;
     }
 
@@ -85,10 +85,10 @@ public class Pager<T> implements Pageable {
      * @Title: setTotalResults
      * @Author: hp 2013-4-8 上午10:03:53
      */
-    public void setTotalResults(int totalResults) {
+    public void setTotalResults(long totalResults) {
         this.totalResults = totalResults;
         if (totalResults % this.onePageSize == 0) {
-            this.totalPage = totalResults / this.onePageSize;
+            this.totalPage = (int) (totalResults / this.onePageSize);
         } else {
             this.totalPage = (int) Math.floor(totalResults / this.onePageSize) + 1;
         }
@@ -98,8 +98,6 @@ public class Pager<T> implements Pageable {
         }
         if (this.currentPage > totalPage) {
             this.currentPage = totalPage;
-            this.firstResult = (this.currentPage - 1) * this.onePageSize;
-
         }
         if (this.currentPage > 1) {
             this.previousPage = this.currentPage - 1;
@@ -153,7 +151,7 @@ public class Pager<T> implements Pageable {
     }
 
     public int getTotal() {
-        return totalResults;
+        return (int) totalResults;
     }
 
 }
