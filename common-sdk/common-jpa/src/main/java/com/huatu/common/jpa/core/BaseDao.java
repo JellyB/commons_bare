@@ -135,7 +135,7 @@ public abstract class BaseDao {
      * @param params
      * @return
      */
-    public <T> List<T> findToTransformerBySql(String sql, Map<String,Object> params) {
+    public <T> List<T> findBySql(String sql, Map<String,Object> params) {
         SQLQuery sqlQuery = createSQLQuery(sql);
         appendParams(sqlQuery,params);
         return sqlQuery.list();
@@ -147,7 +147,7 @@ public abstract class BaseDao {
      * @param params
      * @return
      */
-    public <T> List<T> findToTransformerBySql(String sql, Object ...params) {
+    public <T> List<T> findBySql(String sql, Object ...params) {
         SQLQuery sqlQuery = createSQLQuery(sql);
         appendParams(sqlQuery,params);
         return sqlQuery.list();
@@ -159,7 +159,7 @@ public abstract class BaseDao {
      * @param params
      * @return
      */
-    public <T> T findOneToTransformerBySql(String sql, Map<String,Object> params) {
+    public <T> T findOneBySql(String sql, Map<String,Object> params) {
         SQLQuery sqlQuery = createSQLQuery(sql);
         appendParams(sqlQuery,params);
         return findOne(sqlQuery);
@@ -171,7 +171,7 @@ public abstract class BaseDao {
      * @param params
      * @return
      */
-    public <T> T findOneToTransformerBySql(String sql, Object ...params) {
+    public <T> T findOneBySql(String sql, Object ...params) {
         SQLQuery sqlQuery = createSQLQuery(sql);
         appendParams(sqlQuery,params);
         return findOne(sqlQuery);
@@ -183,7 +183,7 @@ public abstract class BaseDao {
      * @param params
      * @return
      */
-    public <T> T getToTransformerBySql(String sql, Map<String,Object> params) {
+    public <T> T getBySql(String sql, Map<String,Object> params) {
         SQLQuery sqlQuery = createSQLQuery(sql);
         appendParams(sqlQuery,params);
         return get(sqlQuery);
@@ -195,7 +195,7 @@ public abstract class BaseDao {
      * @param params
      * @return
      */
-    public <T> T getToTransformerBySql(String sql, Object ...params) {
+    public <T> T getBySql(String sql, Object ...params) {
         SQLQuery sqlQuery = createSQLQuery(sql);
         appendParams(sqlQuery,params);
         return get(sqlQuery);
