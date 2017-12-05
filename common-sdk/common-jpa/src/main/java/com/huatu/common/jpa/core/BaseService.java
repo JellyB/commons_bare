@@ -24,6 +24,10 @@ public abstract class BaseService<T,ID extends Serializable>{
 		return getDefaultDao().save(t);
 	}
 	@Transactional
+	public List<T> save(Iterable<T> entities){
+		return getDefaultDao().save(entities);
+	}
+	@Transactional
 	public void delete(T t){
 		getDefaultDao().delete(t);
 	}
