@@ -9,7 +9,14 @@ import java.io.Serializable;
 public class NullHolder implements Serializable {
     private static final long serialVersionUID = 1L;
     public static final NullHolder DEFAULT = new NullHolder();
+
+    private boolean placeHolder;
     private NullHolder(){
 
     }
+
+    public boolean isPlaceHolder() {
+        return placeHolder;
+    }
+
 }
