@@ -32,7 +32,7 @@ public class ErrorResult implements Result {
         this.code = code;
     }
 
-    public ErrorResult(int code,String message,  Object data) {
+    protected ErrorResult(int code,String message,  Object data) {
         this.message = message;
         this.code = code;
         this.data = data;
@@ -42,16 +42,8 @@ public class ErrorResult implements Result {
         return data;
     }
 
-    public void setData(Object data) {
-        this.data = data;
-    }
-
     public String getMessage() {
         return message;
-    }
-
-    public void setMessage(String message) {
-        this.message = message;
     }
 
     public int getCode() {
