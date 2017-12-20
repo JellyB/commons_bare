@@ -1,7 +1,7 @@
 package com.huatu.common.exception;
 
 
-import com.huatu.common.CommonErrors;
+import com.huatu.common.CommonResult;
 
 /**
  * @author hanchao
@@ -9,6 +9,6 @@ import com.huatu.common.CommonErrors;
  */
 public class ArgsValidException extends BizException {
     public ArgsValidException(String customMessage) {
-        super(CommonErrors.INVALID_ARGUMENTS,customMessage);
+        super(CommonResult.INVALID_ARGUMENTS,customMessage);
     }
 }
