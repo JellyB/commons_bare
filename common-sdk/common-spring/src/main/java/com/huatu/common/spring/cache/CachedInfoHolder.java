@@ -55,11 +55,8 @@ public class CachedInfoHolder {
     public static class CachedInfo {
         private int id;
         private String name;
-        private String key;
+        private String[] key;
         private int cluster;
-        private String delMethod;
-        private String getMethod;
-        private Cached.Type type;
         private Cached.DataScourseType sourceType;
         private List<CacheParam> params;
     }
@@ -82,7 +79,6 @@ public class CachedInfoHolder {
                 .name(cached.name())
                 .key(cached.key())
                 .cluster(cached.cluster())
-                .type(cached.type())
                 .sourceType(cached.sourceType())
                 .build();
         List<CacheParam> params = new ArrayList<>();

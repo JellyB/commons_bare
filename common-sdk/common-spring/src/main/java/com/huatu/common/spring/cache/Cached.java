@@ -19,9 +19,7 @@ public @interface Cached {
      */
     String name();
 
-    String key();//spel表达式，
-
-    Type type() default Type.VALUE;
+    String[] key();//spel表达式，
 
     /**
      * 参数
@@ -41,13 +39,6 @@ public @interface Cached {
         DELINSIDE
     }
 
-    enum Type{
-        VALUE,
-        HASH,
-        LIST,
-        SET,
-        ZSET
-    }
 
     @interface Param{
         /**
