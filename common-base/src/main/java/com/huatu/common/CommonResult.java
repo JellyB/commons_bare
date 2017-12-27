@@ -14,7 +14,6 @@ public class CommonResult {
     public static final  ErrorResult RESOURCE_NOT_FOUND = ErrorResult.create(1000103,"资源未发现");
     public static final  ErrorResult PERMISSION_DENIED = ErrorResult.create(1000104,"权限拒绝");
     public static final  ErrorResult FORBIDDEN = ErrorResult.create(1000105,"非法请求");
-    public static final ErrorResult UNAUTHORIZED = ErrorResult.create(1000106,"权限不足");
 
     /**
      * 用户会话过期
