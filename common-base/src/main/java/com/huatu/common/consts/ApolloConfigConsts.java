@@ -19,4 +19,6 @@ public class ApolloConfigConsts {
 
     public static final String NAMESPACE_TIKU_REDIS = "tiku.redis-cluster";
 
+    public static final String NAMESPACE_TIKU_DUBBO = "tiku.dubbo";
+
 }
