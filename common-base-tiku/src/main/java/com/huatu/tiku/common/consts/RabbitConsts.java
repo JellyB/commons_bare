@@ -15,6 +15,12 @@ public class RabbitConsts {
 
 
     /**
+     * 数据上报队列
+     */
+    public static final String QUEUE_REPORT = "data_report";
+
+
+    /**
      * 免费课赠送
      */
     @Deprecated
