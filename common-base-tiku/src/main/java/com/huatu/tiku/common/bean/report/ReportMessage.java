@@ -6,5 +6,4 @@ package com.huatu.tiku.common.bean.report;
  */
 public interface ReportMessage {
     ReportType type();
-    long getTimestamp();
 }
