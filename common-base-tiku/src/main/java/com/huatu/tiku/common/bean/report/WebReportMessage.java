@@ -1,8 +1,10 @@
 package com.huatu.tiku.common.bean.report;
 
 import com.huatu.tiku.common.bean.user.UserSession;
+import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import java.util.List;
 import java.util.Map;
@@ -12,6 +14,8 @@ import java.util.Map;
  * @date 2018/1/11 11:57
  */
 @Data
+@NoArgsConstructor
+@AllArgsConstructor
 @Builder
 public class WebReportMessage extends AbstractReportMessage {
     private String name;
