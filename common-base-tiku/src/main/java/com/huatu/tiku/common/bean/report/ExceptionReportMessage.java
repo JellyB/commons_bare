@@ -14,13 +14,9 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class ExceptionReportMessage extends AbstractReportMessage {
+public class ExceptionReportMessage extends ReportMessage {
     private String exception;
     private String message;
     private String stacktrace;
 
-    @Override
-    public ReportType type() {
-        return ReportType.EXCEPTION;
-    }
 }

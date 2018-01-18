@@ -17,7 +17,7 @@ import java.util.Map;
 @NoArgsConstructor
 @AllArgsConstructor
 @Builder
-public class WebReportMessage extends AbstractReportMessage {
+public class WebReportMessage extends ReportMessage {
     private String name;
     private String url;
     private String urlParameters;
@@ -29,8 +29,4 @@ public class WebReportMessage extends AbstractReportMessage {
     private UserSession userSession;
     private String stacktrace;//出现异常才有
     private Object extraData;
-    @Override
-    public ReportType type() {
-        return ReportType.WEB;
-    }
 }
