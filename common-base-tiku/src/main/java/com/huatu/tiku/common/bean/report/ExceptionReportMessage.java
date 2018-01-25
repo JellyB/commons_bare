@@ -5,8 +5,11 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
+import java.util.Map;
+
 /**
- * TODO 异常监控
+ * gw抛出的异常信息，服务待确定
  * @author hanchao
  * @date 2018/1/11 15:00
  */
@@ -19,4 +22,10 @@ public class ExceptionReportMessage extends ReportMessage {
     private String message;
     private String stacktrace;
 
+    //请求信息，方便异常排查
+    private String url;
+    private String urlParameters;
+    private String method;
+    private String body;
+    private Map<String,List<String>> requestHeaders;
 }
