@@ -11,7 +11,8 @@ import java.lang.reflect.Constructor;
 import java.util.concurrent.Executor;
 
 /**
- * 发布事件工具类
+ * 感觉并不清晰，建议自己实现异步,使用ApplicationEventPublisher
+ * 发布事件工具类，简单封装，为了方便异步
  * @author hanchao
  * @date 2017/10/13 13:27
  */
