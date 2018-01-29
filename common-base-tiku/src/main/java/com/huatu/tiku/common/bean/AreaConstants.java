@@ -127,7 +127,7 @@ public class AreaConstants {
     public static int getNetSchoolProvinceId(int areaId){
         Area area = getArea(areaId);
         if(area == null){
-            return 1;
+            return 0;
         }
         if(area.getCid() == 0){
             area = getArea(area.getParentId());
