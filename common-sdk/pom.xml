@@ -17,6 +17,7 @@
         <module>common-spring</module>
         <module>common-serialize</module>
         <module>common-jpa</module>
+        <module>common-jwt</module>
     </modules>
 
     <properties>
