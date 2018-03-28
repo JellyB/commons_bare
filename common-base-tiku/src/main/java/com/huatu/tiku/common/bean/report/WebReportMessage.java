@@ -28,5 +28,6 @@ public class WebReportMessage extends ReportMessage {
     private Map<String,List<String>> responseHeaders;
     private UserSession userSession;
     private String stacktrace;//出现异常才有
+    private Object returnValue;
     private Object extraData;
 }
