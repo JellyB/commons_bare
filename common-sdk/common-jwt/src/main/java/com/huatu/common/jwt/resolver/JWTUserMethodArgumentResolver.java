@@ -1,13 +1,17 @@
 package com.huatu.common.jwt.resolver;
 
+import com.huatu.common.exception.UnauthorizedException;
 import com.huatu.common.jwt.util.JWTUtil;
 import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.config.ConfigurableBeanFactory;
 import org.springframework.core.MethodParameter;
+import org.springframework.web.bind.ServletRequestBindingException;
 import org.springframework.web.context.request.NativeWebRequest;
 import org.springframework.web.servlet.mvc.method.annotation.ServletCookieValueMethodArgumentResolver;
 
 import javax.servlet.http.Cookie;
+
+import static com.huatu.common.CommonResult.SESSION_EXPIRE;
 
 /**
  * @author hanchao
@@ -51,13 +55,22 @@ public class JWTUserMethodArgumentResolver extends ServletCookieValueMethodArgum
             return null;
         }
         JWToken annotation = parameter.getParameterAnnotation(JWToken.class);
-        return JWTUtil.parse(jwToken,annotation.verify());
+        try {
+            return JWTUtil.parse(jwToken,annotation.verify());
+        } catch(Exception e){
+            throw new UnauthorizedException(SESSION_EXPIRE);
+        }
+    }
+
+    @Override
+    protected void handleMissingValue(String name, MethodParameter parameter) throws ServletRequestBindingException {
+        throw new UnauthorizedException();
     }
 
     private static class JWTokenNamedValueInfo extends NamedValueInfo {
 
         private JWTokenNamedValueInfo(JWToken annotation) {
-            super(annotation.name(), annotation.required(), annotation.defaultValue());
+            super(annotation.name(), annotation.required(), null);
         }
     }
 }

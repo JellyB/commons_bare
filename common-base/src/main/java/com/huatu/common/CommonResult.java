@@ -15,6 +15,12 @@ public class CommonResult {
     public static final  ErrorResult PERMISSION_DENIED = ErrorResult.create(1000104,"权限拒绝");
     public static final  ErrorResult FORBIDDEN = ErrorResult.create(1000105,"非法请求");
 
+
+    /**
+     * 未授权，用户未登录
+     */
+    public static final ErrorResult UNAUTHORIZED = ErrorResult.create(1110001,"用户未登录");
+
     /**
      * 用户会话过期
      */

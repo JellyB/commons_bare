@@ -2,6 +2,7 @@ package com.huatu.common.utils.code;
 
 
 import com.huatu.common.utils.date.DateFormatUtil;
+import com.huatu.common.utils.date.TimeMark;
 
 import java.util.Date;
 import java.util.Random;

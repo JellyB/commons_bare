@@ -9,10 +9,10 @@ import com.huatu.common.ErrorResult;
  */
 public class UnauthorizedException extends BizException {
     public UnauthorizedException(){
-        super(CommonResult.PERMISSION_DENIED);
+        super(CommonResult.UNAUTHORIZED);
     }
     public UnauthorizedException(String customMessage) {
-        super(CommonResult.PERMISSION_DENIED,customMessage);
+        super(CommonResult.UNAUTHORIZED,customMessage);
     }
 
     public UnauthorizedException(ErrorResult errorResult){
