@@ -19,6 +19,10 @@ public class RabbitConsts {
      */
     public static final String QUEUE_REPORT = "data_report";
 
+    /**
+     * 云 数据统计队列名称
+     */
+    public static final String QUEUE_GALAXY_SEARCH = "data_galaxy_search";
 
     /**
      * 免费课赠送
