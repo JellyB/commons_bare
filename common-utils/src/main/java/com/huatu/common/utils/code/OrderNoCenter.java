@@ -1,7 +1,6 @@
 package com.huatu.common.utils.code;
 
 import com.huatu.common.utils.date.DateFormatUtil;
-import com.huatu.common.utils.date.TimeMark;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.FileUtils;
 import org.slf4j.Logger;
@@ -152,35 +151,4 @@ public class OrderNoCenter {
         return System.currentTimeMillis();
     }
 
-    /**
-     * 最大十位，最小7位,补0format
-     */
-    /*public void test(){
-        String t = String.valueOf((1L << 22) | (1 << 12) | 0);
-        String t1 = String.valueOf((999L << 22) | (1023 << 12) | 0);
-        System.out.println(DateFormatUtils.NUMBER_FORMAT.format(System.currentTimeMillis())+"-"+t);
-        System.out.println(DateFormatUtils.NUMBER_FORMAT.format(System.currentTimeMillis())+"-"+t1);
-        long l1 = (1L << 22) | (1 << 12) | 0;
-        long l2 = (999L << 22) | (1023 << 12) | 0;
-        System.out.println(l1);
-        System.out.println(l2);
-        System.out.println(String.format("%010d",l1));
-        System.out.println(String.format("%010d",l2));
-    }*/
-
-    public static void main(String[] args){
-        //性能测试
-        TimeMark mark = TimeMark.newInstance();
-        for (int i = 0; i < 1000000; i++) {
-            OrderNoCenter.getInstance().create();
-        }
-        mark.simplePrint();
-
-        mark.mark();
-
-        for (int i = 0; i < 1000000; i++) {
-            IdCenter.getInstance().getId();
-        }
-        mark.simplePrint();
-    }
 }
