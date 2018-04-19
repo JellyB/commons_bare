@@ -22,7 +22,7 @@ public class RabbitConsts {
     /**
      * 云 数据统计队列名称
      */
-    public static final String QUEUE_GALAXY_SEARCH = "data_galaxy_search";
+    public static final String QUEUE_GALAXY_SEARCH = "galaxy_data_active";
 
     /**
      * 免费课赠送
