@@ -3,28 +3,18 @@
          xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
     <parent>
-        <artifactId>commons</artifactId>
-        <groupId>com.huatu.commons</groupId>
+        <artifactId>common-sdk</artifactId>
+        <groupId>com.huatu.commons.sdk</groupId>
         <version>1.0-SNAPSHOT</version>
     </parent>
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.huatu.commons.sdk</groupId>
-    <artifactId>common-sdk</artifactId>
-    <packaging>pom</packaging>
+    <artifactId>common-db</artifactId>
+    <version>1.0-${project.environment}-SNAPSHOT</version>
 
-    <modules>
-        <module>common-spring</module>
-        <module>common-serialize</module>
-        <module>common-jpa</module>
-        <module>common-jwt</module>
-        <module>common-db</module>
-    </modules>
+    <dependencies>
 
-    <properties>
-    </properties>
-
-
-
+    </dependencies>
 
 </project>
