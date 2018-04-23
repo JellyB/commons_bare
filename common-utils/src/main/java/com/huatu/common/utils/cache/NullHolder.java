@@ -3,6 +3,7 @@ package com.huatu.common.utils.cache;
 import java.io.Serializable;
 
 /**
+ * 防止缓存击穿
  * @author hanchao
  * @date 2017/9/13 10:40
  */

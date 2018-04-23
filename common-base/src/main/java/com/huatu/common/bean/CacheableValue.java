@@ -1,6 +1,7 @@
 package com.huatu.common.bean;
 
 /**
+ * 这个作用是为了返回缓存里的数据时候增加两个属性，是否缓存，为了线上排查问题更方便
  * @author hanchao
  * @date 2017/9/29 15:15
  */

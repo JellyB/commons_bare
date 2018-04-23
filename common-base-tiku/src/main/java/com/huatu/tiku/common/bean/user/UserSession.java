@@ -10,7 +10,7 @@ import lombok.Data;
 @Data
 @Builder
 public class UserSession {
-    private int ssoId;
+    private int ssoId;//目前还没用，预留
     private int id;
     private String token;
     private String mobile;
