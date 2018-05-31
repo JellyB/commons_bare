@@ -12,4 +12,12 @@
     <artifactId>common-base</artifactId>
     <version>1.0-${project.environment}-SNAPSHOT</version>
 
+    <dependencies>
+        <dependency>
+            <groupId>javax.persistence</groupId>
+            <artifactId>persistence-api</artifactId>
+            <version>RELEASE</version>
+            <optional>true</optional>
+        </dependency>
+    </dependencies>
 </project>
