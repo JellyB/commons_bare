@@ -1,7 +1,6 @@
 package com.huatu.common.bean;
 
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 
 import javax.persistence.Id;
@@ -13,7 +12,6 @@ import java.sql.Timestamp;
  * Created by lijun on 2018/5/28
  */
 @Data
-@Builder
 @AllArgsConstructor
 public class BaseEntity implements Serializable {
 

@@ -21,4 +21,5 @@ public class ApolloConfigConsts {
 
     public static final String NAMESPACE_TIKU_DUBBO = "tiku.dubbo";
 
+    private static final String NAMESPACE_DB_VHUATU = "tiku.db_vhuatu";
 }
