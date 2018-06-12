@@ -2,7 +2,10 @@ package com.huatu.common.bean;
 
 import lombok.AllArgsConstructor;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
+import javax.persistence.GeneratedValue;
+import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import java.io.Serializable;
 import java.sql.Timestamp;
@@ -12,10 +15,13 @@ import java.sql.Timestamp;
  * Created by lijun on 2018/5/28
  */
 @Data
+@NoArgsConstructor
 @AllArgsConstructor
 public class BaseEntity implements Serializable {
 
+    //此处官方建议 @KeySql(dialect = IdentityDialect.MYSQL) 取回主键
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     /**
