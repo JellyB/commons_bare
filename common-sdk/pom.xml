@@ -20,6 +20,7 @@
         <module>common-jwt</module>
         <module>common-db</module>
         <module>common-mybatis-util</module>
+        <module>common-baseMapper-helper</module>
     </modules>
 
     <properties>
