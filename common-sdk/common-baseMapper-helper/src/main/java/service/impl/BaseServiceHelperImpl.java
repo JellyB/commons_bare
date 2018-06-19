@@ -17,7 +17,6 @@ import tk.mybatis.mapper.weekend.WeekendSqls;
 import java.sql.Timestamp;
 import java.util.Collection;
 import java.util.List;
-import java.util.stream.Collectors;
 
 /**
  * Created by lijun on 2018/6/19
@@ -109,11 +108,8 @@ public class BaseServiceHelperImpl<T extends BaseEntity> implements BaseServiceH
     @Transactional
     @Override
     public List<T> selectAll() {
-        List<T> list = baseMapper.selectAll();
-        List<T> collect = list.parallelStream()
-                .filter(data -> BaseStatusEnum.isNormal(data.getStatus()))
-                .collect(Collectors.toList());
-        return collect;
+        Example example = Example.builder(this.clazz).build();
+        return selectByExample(example);
     }
 
 
