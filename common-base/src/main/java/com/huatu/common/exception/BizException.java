@@ -1,6 +1,7 @@
 package com.huatu.common.exception;
 
 import com.huatu.common.ErrorResult;
+import com.huatu.common.ISystemStatusEnum;
 
 /**
  * 业务异常类
@@ -22,6 +23,12 @@ public class BizException extends RuntimeException {
         this.customMessage = customMessage;
     }
 
+    public BizException(ISystemStatusEnum systemStatusEnum) {
+        super(systemStatusEnum.getMessage());
+        ErrorResult errorResult = ErrorResult.create(systemStatusEnum.getCode(), systemStatusEnum.getMessage());
+        this.errorResult = errorResult;
+        this.customMessage = systemStatusEnum.getMessage();
+    }
 
     /**
      * 获取错误结果
