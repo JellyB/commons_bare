@@ -27,7 +27,12 @@ public class CommonResult {
     public static final ErrorResult SESSION_EXPIRE = ErrorResult.create(1110002,"用户会话过期");
 
     /**
-     * 用户咋其他设备登录
+     * 用户在其他设备登录
      */
     public static final ErrorResult LOGIN_ON_OTHER_DEVICE = ErrorResult.create(1110004,"用户在其他设备登录");
+
+    /**
+     * 您的账号已在其他设备登录。如非本人操作，请及时修改密码。
+     */
+    public static final ErrorResult LOGIN_ON_OTHER_DEVICE_RECOMMENDED_CHANGE_PASSWD = ErrorResult.create(1110005, "您的账号已在其他设备登录。如非本人操作，请及时修改密码。");
 }
