@@ -16,17 +16,23 @@ public class BaseResponse implements Result {
     private Object message;
     private Object data;
 
-    private BaseResponse(Object message) {
+    private BaseResponse(Object data) {`
         this.code = SUCCESS_CODE;
-        this.data = null;
+        this.data = data;
+        this.message = null;
+    }
+
+    private BaseResponse(Object data, Object message) {
+        this.code = SUCCESS_CODE;
+        this.data = data;
         this.message = message;
     }
 
-    public final static BaseResponse create(Object message) {
+    public static BaseResponse create(Object message) {
         return new BaseResponse(message);
     }
 
-    public final static BaseResponse create(int code, Object message, Object data) {
+    public static BaseResponse create(int code, Object message, Object data) {
         return new BaseResponse(code, message, data);
     }
 
