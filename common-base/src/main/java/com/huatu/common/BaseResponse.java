@@ -16,7 +16,7 @@ public class BaseResponse implements Result {
     private Object message;
     private Object data;
 
-    private BaseResponse(Object data) {`
+    private BaseResponse(Object data) {
         this.code = SUCCESS_CODE;
         this.data = data;
         this.message = null;
