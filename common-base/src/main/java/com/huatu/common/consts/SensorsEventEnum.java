@@ -11,7 +11,8 @@ public enum SensorsEventEnum {
 	MOKAO_SIGNUP("HuaTuOnline_app_pc_HuaTuOnline_SimulatedSignUp", "模考大赛我要报名"),
 	MOKAO_SURESIGNUP("HuaTuOnline_app_pc_HuaTuOnline_SimulatedSureSignUp", "模考大赛确认报名"),
 	MOKAO_STARTANSWER("HuaTuOnline_app_pc_HuaTuOnline_SimulatedStartAnswer", "模考大赛开始答题"),
-	MOKAO_ENDANSWER("HuaTuOnline_app_pc_HuaTuOnline_SimulatedEndAnswer", "模考大赛结束答题");
+	MOKAO_ENDANSWER("HuaTuOnline_app_pc_HuaTuOnline_SimulatedEndAnswer", "模考大赛结束答题"),
+	SIGNUP_SUCCEED("HuaTuOnline_pc_HuaTuOnline_SignUpSucceed", "注册成功");
 
 	private String code;
 	private String desc;
