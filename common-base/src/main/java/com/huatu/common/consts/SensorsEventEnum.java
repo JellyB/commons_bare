@@ -15,16 +15,16 @@ public enum SensorsEventEnum {
 	SIGNUP_SUCCEED("HuaTuOnline_pc_HuaTuOnline_SignUpSucceed", "注册成功"),
 	LOGIN_NAME("HuaTuOnline_user_name", "华图在线_登录用户名"),
 	REGISTER_TIME("HuaTuOnline_signup_time", "华图在线_注册时间"),
+	PC_LOGIN_SUCCEED("HuaTuOnline_pc_HuaTuOnline_PlaceLoginMessage","PC登录成功"),
+	
 	/**
-	 * 报考城市  (北京)
+	 * 报考城市 (北京)
 	 */
 	EXAM_AREA("HuaTuOnline_examination_city", "华图在线_报考城市"),
 	/**
 	 * 考试类型(公务员北京)
 	 */
 	EXAM_CATEGORY_AREA("HuaTuOnline_examination_type", "华图在线_考试类型");
-	 
-	
 
 	private String code;
 	private String desc;
