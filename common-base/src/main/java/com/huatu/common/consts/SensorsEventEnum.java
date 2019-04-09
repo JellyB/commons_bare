@@ -17,7 +17,10 @@ public enum SensorsEventEnum {
 	REGISTER_TIME("HuaTuOnline_signup_time", "华图在线_注册时间"),
 	PC_LOGIN_SUCCEED("HuaTuOnline_pc_HuaTuOnline_PlaceLoginMessage","PC登录成功"),
 	M_LOGIN_SUCCEED("HuaTuOnline_M_HuaTuOnline_PlaceLoginMessage","M站登录成功"),
-	
+	/**
+	 * 申论交卷成功
+	 */
+	ESSAY_COMMIT_SUCCEED("HuaTuOnline_app_HuaTuOnline_ApplicationSubmitSucceed", "申论交卷成功"),
 	/**
 	 * 报考城市 (北京)
 	 */

@@ -24,4 +24,5 @@ public class UserSession {
     private String newDiveceLoginTime;
     private int category;
     private int qcount;
+    private String ucId;
 }
