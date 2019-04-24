@@ -21,6 +21,8 @@ public enum SensorsEventEnum {
 	 * 申论交卷成功
 	 */
 	ESSAY_COMMIT_SUCCEED("HuaTuOnline_app_HuaTuOnline_ApplicationSubmitSucceed", "申论交卷成功"),
+	
+	COURSE_PRACTICE_COMMIT_ANSWER_SUCCEED("HuaTuOnline_app_pc_HuaTuOnline_LiveAnswerSubmitSucceed", "直播随堂练提交答案成功"),
 	/**
 	 * 报考城市 (北京)
 	 */
