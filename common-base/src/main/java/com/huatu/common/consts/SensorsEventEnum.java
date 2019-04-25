@@ -34,7 +34,12 @@ public enum SensorsEventEnum {
 	/**
 	 * 考试类型(公务员北京)
 	 */
-	EXAM_CATEGORY_AREA("HuaTuOnline_examination_type", "华图在线_考试类型");
+	EXAM_CATEGORY_AREA("HuaTuOnline_examination_type", "华图在线_考试类型"),
+	/**
+	 * 注册类型（php批量注册）
+	 */
+	REGISTER_TYPE("HuaTuOnline_register_type", "华图在线_注册类型");
+	
 
 	private String code;
 	private String desc;
