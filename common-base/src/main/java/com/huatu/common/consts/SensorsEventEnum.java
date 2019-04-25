@@ -24,6 +24,10 @@ public enum SensorsEventEnum {
 	
 	COURSE_PRACTICE_COMMIT_ANSWER_SUCCEED("HuaTuOnline_app_pc_HuaTuOnline_LiveAnswerSubmitSucceed", "直播随堂练提交答案成功"),
 	/**
+	 * 批量注册成功
+	 */
+	SIGNUP_BATCH_SUCCEED("HuaTuOnline_all_HuaTuOnline_BulkRegister", "批量注册成功"),
+	/**
 	 * 报考城市 (北京)
 	 */
 	EXAM_AREA("HuaTuOnline_examination_city", "华图在线_报考城市"),
