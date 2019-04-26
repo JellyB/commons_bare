@@ -23,6 +23,11 @@ public enum SensorsEventEnum {
 	ESSAY_COMMIT_SUCCEED("HuaTuOnline_app_HuaTuOnline_ApplicationSubmitSucceed", "申论交卷成功"),
 	
 	COURSE_PRACTICE_COMMIT_ANSWER_SUCCEED("HuaTuOnline_app_pc_HuaTuOnline_LiveAnswerSubmitSucceed", "直播随堂练提交答案成功"),
+	
+	/**
+	 * 直播随堂练试题信息
+	 */
+	COURSE_PRACTICE_QUESTION_INFO("HuaTuOnline_app_pc_HuaTuOnline_LiveExercise", "直播随堂练试题信息"),
 	/**
 	 * 批量注册成功
 	 */
