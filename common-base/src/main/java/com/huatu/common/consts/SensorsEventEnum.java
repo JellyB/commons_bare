@@ -33,6 +33,11 @@ public enum SensorsEventEnum {
 	 */
 	SIGNUP_BATCH_SUCCEED("HuaTuOnline_all_HuaTuOnline_BulkRegister", "批量注册成功"),
 	/**
+	 * 搜索
+	 */
+	SEARCH("HuaTuOnline_app_HuaTuOnline_PleaseSearch", "搜索"),
+	
+	/**
 	 * 报考城市 (北京)
 	 */
 	EXAM_AREA("HuaTuOnline_examination_city", "华图在线_报考城市"),
