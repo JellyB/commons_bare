@@ -48,7 +48,11 @@ public enum SensorsEventEnum {
 	/**
 	 * 注册类型（php批量注册）
 	 */
-	REGISTER_TYPE("HuaTuOnline_register_type", "华图在线_注册类型");
+	REGISTER_TYPE("HuaTuOnline_register_type", "华图在线_注册类型"),
+	/**
+	 * 课程送金币限时活动
+	 */
+	COURSE_ACTIVITY_COINS("HuaTuOnline_all_HuaTuOnline_GetCoins", "限时活动送金币");
 	
 
 	private String code;
