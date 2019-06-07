@@ -52,7 +52,7 @@ public enum SensorsEventEnum {
 	/**
 	 * 课程送金币限时活动-V2
 	 */
-	COURSE_ACTIVITY_COINS("HuaTuOnline_all_HuaTuOnline_GetCoinsV2", "限时活动送金币");
+	COURSE_ACTIVITY_COINS("HuaTuOnline_all_HuaTuOnline_GetCoins", "限时活动送金币");
 	
 
 	private String code;
