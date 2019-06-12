@@ -17,7 +17,15 @@ public class ApolloConfigConsts {
 
     public static final String NAMESPACE_TIKU_DB = "tiku.db";
 
+    /**
+     * 使用 redis 做持久化的 服务（模考大赛、课后作业、随堂练 etc 统计信息）
+     */
     public static final String NAMESPACE_TIKU_REDIS = "tiku.redis-cluster";
+
+    /**
+     * 仅做缓存用的 redis 服务
+     */
+    public static final String NAMESPACE_TIKU_CACHE_REDIS = "tiku.redis-cache-cluster";
 
     public static final String NAMESPACE_TIKU_DUBBO = "tiku.dubbo";
 
