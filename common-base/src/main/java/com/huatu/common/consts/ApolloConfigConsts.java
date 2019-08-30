@@ -29,7 +29,15 @@ public class ApolloConfigConsts {
 
     public static final String NAMESPACE_TIKU_DUBBO = "tiku.dubbo";
 
+    /**
+     * 主数据库
+     */
     public static final String NAMESPACE_DB_VHUATU = "tiku.db_vhuatu";
+
+    /**
+     * 从库
+     */
+    public static final String NAMESPACE_DB_VHUATU_SLAVE = "tiku.db_vhuatu_slave";
 
     public static final String NAMESPACE_TIKU_MONGO = "tiku.mongo-cluster";
 }
